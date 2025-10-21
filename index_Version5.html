@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modern Clock App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container horizontal" id="clockContainer">
+    <!-- Hamburger Menu Button on top left -->
+    <button id="burgerMenu" class="burger-menu" aria-label="Menu">&#9776;</button>
+    <!-- Main Content: displays one mode at a time -->
+    <div class="main-content">
+      <!-- CLOCK -->
+      <div id="clockView" class="mode-view">
+        <div id="clock" class="clock-text"></div>
+      </div>
+      <!-- STOPWATCH -->
+      <div id="stopwatchView" class="mode-view" style="display:none;">
+        <div id="stopwatch" class="clock-text">00:00:00.00</div>
+        <div class="stopwatch-controls">
+          <button id="swStartPause">Start</button>
+          <button id="swReset">Reset</button>
+          <button id="swLap">Lap</button>
+        </div>
+        <ul id="swLaps" class="laps-list"></ul>
+      </div>
+      <!-- TIMER -->
+      <div id="timerView" class="mode-view" style="display:none;">
+        <div id="timer" class="clock-text">00:00:00</div>
+        <div class="timer-setter">
+          <input id="timerHrs" type="number" min="0" max="99" value="0" aria-label="Hours">
+          <span>:</span>
+          <input id="timerMin" type="number" min="0" max="59" value="1" aria-label="Minutes">
+          <span>:</span>
+          <input id="timerSec" type="number" min="0" max="59" value="0" aria-label="Seconds">
+        </div>
+        <div class="timer-controls">
+          <button id="timerStartPause">Start</button>
+          <button id="timerReset">Reset</button>
+        </div>
+      </div>
+    </div>
+    <!-- Controls Menu -->
+    <div class="controls" id="controlsMenu">
+      <button id="modeClock">Clock</button>
+      <button id="modeStopwatch">Stopwatch</button>
+      <button id="modeTimer">Timer</button>
+      <hr>
+      <button id="toggleMode">Switch to 12h</button>
+      <button id="toggleColor">Switch Color</button>
+      <button id="toggleTheme">Switch Theme</button>
+      <button id="toggleLayout">Vertical Mode</button>
+      <button id="showHistory">History</button>
+      <button id="saveTime">Save Time</button>
+    </div>
+  </div>
+  <!-- History Modal -->
+  <div id="historyModal" class="modal">
+    <div class="modal-content">
+      <span id="closeHistory" class="close">&times;</span>
+      <h2>Saved Times</h2>
+      <ul id="historyList"></ul>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
